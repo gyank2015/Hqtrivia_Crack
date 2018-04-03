@@ -34,8 +34,8 @@ def retrieve_q_and_a(text):
 	#print(answers)
 	return question, answers
 
-g_cse_api_key = 'AIzaSyDGe6mTBYsQwU7fp0TW3vq8bhadPL8kx4w'
-g_cse_id = '004161184837490897252:-sosddvo1ew'
+g_cse_api_key = 'google custom search engine api'
+g_cse_id = 'google custom search engine id'
 #
 
 def notify(title, text):
@@ -65,9 +65,9 @@ def approach2(question, answers):
 
 def approach3(question, answers):
     met2 = [0, 0, 0]
-    res0 = google_search(question + ' "' + answers[0] + '"', None)
-    res1 = google_search(question + ' "' + answers[1] + '"', None)
-    res2 = google_search(question + ' "' + answers[2] + '"', None)
+    res0 = google_search(question + ' ' + answers[0], None)
+    res1 = google_search(question + ' ' + answers[1], None)
+    res2 = google_search(question + ' ' + answers[2], None)
     return [int(res0['searchInformation']['totalResults']), int(res1['searchInformation']['totalResults']), int(res2['searchInformation']['totalResults'])]
 
 def predict(metric1, metric2, answers):
